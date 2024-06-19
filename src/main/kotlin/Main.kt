@@ -8,9 +8,9 @@ suspend fun main() {
 
     val playerCount = askPlayerCount()
     val game = Game.forPlayerCount(playerCount)
-    continueGame(game)
+    val won = continueGame(game)
 
-    val winner = game.players.indexOfFirst { it.landmarks.size == 4 }
+    val winner = won.players.indexOfFirst { it.landmarks.size == 4 }
     println("Player $winner won!")
     println("The end")
 }
